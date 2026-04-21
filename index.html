@@ -5,34 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Junior's Landscaping & Handyman Services</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 {box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Poppins',sans-serif;background:#0b0f14;color:#fff;overflow-x:hidden;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0f14;
+color:white;
+}
 
 / NAV /
 nav{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 30px;
-background:rgba(0,0,0,0.7);
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:rgba(0,0,0,0.8);
 backdrop-filter:blur(12px);
 z-index:999;
 }
-nav img{
-height:50px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,0.6);
-}
-nav a{
-color:white;text-decoration:none;margin-left:15px;font-size:14px;
+
+.logo{
+height:55px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.6);
 }
 
 / HERO /
 .hero{
+margin-top:70px;
+height:85vh;
 position:relative;
-height:100vh;
 overflow:hidden;
 }
 
@@ -48,11 +56,12 @@ transition:opacity 1.2s ease-in-out;
 }
 .slide.active{opacity:1;}
 
+/ OVERLAY /
 .overlay{
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -61,13 +70,23 @@ text-align:center;
 padding:20px;
 }
 
-.overlay h1{
-font-size:48px;
-font-weight:900;
-max-width:800px;
+/ BIG HERO LOGO /
+.hero-logo{
+width:140px;
+margin-bottom:15px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
-.overlay span{color:#ffb300;}
-.overlay p{opacity:.8;margin-top:10px;}
+
+/ TEXT /
+.overlay h1{
+font-size:42px;
+font-weight:900;
+}
+
+.overlay span{
+color:#ffb300;
+}
 
 / BUTTON /
 .btn{
@@ -76,82 +95,69 @@ background:#ffb300;
 color:black;
 border-radius:10px;
 text-decoration:none;
-margin:12px;
+margin:10px;
 font-weight:bold;
 transition:.3s;
 }
 .btn:hover{
 transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(255,179,0,0.4);
+box-shadow:0 12px 25px rgba(255,179,0,0.4);
 }
 
 / SECTION /
 .section{
-padding:100px 20px;
+padding:90px 20px;
 text-align:center;
-max-width:1200px;
-margin:auto;
 }
 
 / SERVICES /
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
 }
+
 .card{
 background:#121821;
-padding:30px;
-border-radius:15px;
+padding:25px;
+border-radius:12px;
 transition:.3s;
 }
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,0.6);
 }
 
 / GALLERY /
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px;
+max-width:1100px;
+margin:auto;
 }
+
 .grid img{
 width:100%;
-height:250px;
+height:220px;
 object-fit:cover;
 border-radius:12px;
-cursor:pointer;
 transition:.3s;
+cursor:pointer;
 }
-.grid img:hover{transform:scale(1.05);}
+.grid img:hover{
+transform:scale(1.05);
+}
 
 / CONTACT /
 .contact{
 background:#121821;
-padding:100px 20px;
-text-align:center;
+padding:70px 20px;
 }
 
-/ ZOOM /
-#zoomBox{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,0.95);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-#zoomBox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
-
-/ STICKY /
+/ STICKY */
 .sticky{
 position:fixed;
 bottom:0;
@@ -159,18 +165,7 @@ width:100%;
 display:flex;
 justify-content:space-around;
 background:#0f141b;
-padding:12px;
-}
-
-/ SCROLL ANIMATION /
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-.fade.show{
-opacity:1;
-transform:translateY(0);
+padding:10px;
 }
 </style>
 </head>
@@ -179,12 +174,7 @@ transform:translateY(0);
 
 <!-- NAV -->
 <nav>
-<img src="CE76556F-8246-4B0E-BBD8-317366D74460.png">
-<div>
-<a href="#services">Services</a>
-<a href="#work">Work</a>
-<a href="#contact">Contact</a>
-</div>
+<img src="CE76556F-8246-4B0E-BBD8-317366D74460.png" class="logo">
 </nav>
 
 <!-- HERO -->
@@ -193,22 +183,25 @@ transform:translateY(0);
 <div class="slide active" style="background-image:url('IMG_0613.jpeg')"></div>
 <div class="slide" style="background-image:url('IMG_0621.jpeg')"></div>
 <div class="slide" style="background-image:url('IMG_0624.jpeg')"></div>
-<div class="slide" style="background-image:url('IMG_0558.jpeg')"></div>
 
 <div class="overlay">
-<h1><span>Premium</span> Landscaping & Handyman Services</h1>
+
+<img src="CE76556F-8246-4B0E-BBD8-317366D74460.png" class="hero-logo">
+
+<h1><span>Premium</span> Landscaping & Handyman</h1>
 <p>Nashville & Surrounding Areas</p>
 
 <a href="tel:6159987338" class="btn">Call Now</a>
 <a href="sms:6159987338" class="btn">Text Us</a>
 
 <p style="margin-top:10px;">✔ Free Estimates • ✔ Fast • ✔ Reliable</p>
+
 </div>
 
 </section>
 
 <!-- SERVICES -->
-<section class="section fade" id="services">
+<section class="section">
 <h2>Our Services</h2>
 
 <div class="services">
@@ -222,39 +215,32 @@ transform:translateY(0);
 </section>
 
 <!-- WORK -->
-<section class="section fade" id="work">
+<section class="section">
 <h2>Our Work</h2>
 
 <div class="grid">
-<img src="IMG_0199.jpeg" onclick="zoom(this)">
-<img src="IMG_0486.jpeg" onclick="zoom(this)">
-<img src="IMG_0521.jpeg" onclick="zoom(this)">
-<img src="IMG_0522.jpeg" onclick="zoom(this)">
-<img src="IMG_0558.jpeg" onclick="zoom(this)">
-<img src="IMG_0612.jpeg" onclick="zoom(this)">
-<img src="IMG_0613.jpeg" onclick="zoom(this)">
-<img src="IMG_0621.jpeg" onclick="zoom(this)">
-<img src="IMG_0624.jpeg" onclick="zoom(this)">
-<img src="IMG_5710.jpeg" onclick="zoom(this)">
-<img src="IMG_5711.jpeg" onclick="zoom(this)">
-<img src="IMG_5712.jpeg" onclick="zoom(this)">
-<img src="IMG_5715.jpeg" onclick="zoom(this)">
-<img src="IMG_5720.jpeg" onclick="zoom(this)">
+<img src="IMG_0199.jpeg">
+<img src="IMG_0486.jpeg">
+<img src="IMG_0521.jpeg">
+<img src="IMG_0522.jpeg">
+<img src="IMG_0558.jpeg">
+<img src="IMG_0612.jpeg">
+<img src="IMG_0621.jpeg">
+<img src="IMG_0624.jpeg">
+<img src="IMG_5710.jpeg">
+<img src="IMG_5711.jpeg">
+<img src="IMG_5712.jpeg">
+<img src="IMG_5715.jpeg">
+<img src="IMG_5720.jpeg">
 </div>
-
 </section>
 
 <!-- CONTACT -->
-<section class="contact fade" id="contact">
+<section class="contact">
 <h2>Call or Text Anytime</h2>
 <h1>(615) 998-7338</h1>
 <p>Nashville • Antioch • Brentwood • Franklin</p>
 </section>
-
-<!-- ZOOM -->
-<div id="zoomBox" onclick="closeZoom()">
-<img id="zoomImg">
-</div>
 
 <!-- STICKY -->
 <div class="sticky">
@@ -263,7 +249,6 @@ transform:translateY(0);
 </div>
 
 <script>
-/ SLIDESHOW /
 let slides=document.querySelectorAll('.slide');
 let i=0;
 setInterval(()=>{
@@ -271,26 +256,6 @@ slides[i].classList.remove('active');
 i=(i+1)%slides.length;
 slides[i].classList.add('active');
 },3000);
-
-/ ZOOM /
-function zoom(img){
-document.getElementById('zoomBox').style.display='flex';
-document.getElementById('zoomImg').src=img.src;
-}
-function closeZoom(){
-document.getElementById('zoomBox').style.display='none';
-}
-
-/ SCROLL ANIMATION */
-let faders=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-faders.forEach(el=>{
-let rect=el.getBoundingClientRect();
-if(rect.top<window.innerHeight-100){
-el.classList.add('show');
-}
-});
-});
 </script>
 
 </body>
