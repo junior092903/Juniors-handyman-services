@@ -3,40 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junior's Handyman Services</title>
+<title>Junior's Services</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-{box-sizing:border-box;}
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#0b0f14;
-color:white;
-}
+{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;background:#0b0f14;color:#fff;}
 
 / NAV /
 nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:18px 40px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
-z-index:999;
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;
+padding:15px 25px;
+background:rgba(0,0,0,.7);
+z-index:10;
 }
-
-nav h2{
-color:#ffb300;
-}
+nav h2{color:#ffb300;}
 
 / HERO /
 .hero{
-height:100vh;
 position:relative;
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -47,110 +35,90 @@ overflow:hidden;
 / SLIDESHOW /
 .slideshow{
 position:absolute;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:0;
+top:0;left:0;width:100%;height:100%;
 }
-
 .slide{
 position:absolute;
-width:100%;
-height:100%;
+width:100%;height:100%;
 object-fit:cover;
 opacity:0;
-transition:opacity 1s;
+transition:opacity 1s ease;
 }
+.slide.active{opacity:1;}
 
-.slide.active{
-opacity:1;
-}
-
+/ DARK OVERLAY /
 .hero::after{
-content:'';
+content:"";
 position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-top:0;
-left:0;
-z-index:1;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.5);
 }
 
+/ CONTENT /
 .hero-content{
 position:relative;
 z-index:2;
+max-width:700px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
+font-weight:900;
 }
 
-.hero span{
-color:#ffb300;
-}
+.hero span{color:#ffb300;}
 
 .btn{
-padding:14px 28px;
+display:inline-block;
+margin:12px;
+padding:14px 26px;
 border-radius:10px;
 text-decoration:none;
-margin:10px;
-display:inline-block;
+font-weight:700;
 }
 
-.btn-main{
-background:#ffb300;
-color:black;
-}
-
-.btn-outline{
-border:1px solid white;
-color:white;
-}
+.btn-main{background:#ffb300;color:#000;}
+.btn-outline{border:1px solid #fff;color:#fff;}
 
 / SECTION /
 .section{
-padding:100px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 / SERVICES /
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:1000px;
 margin:auto;
 }
-
 .card{
 background:#121821;
-padding:30px;
-border-radius:12px;
+padding:25px;
+border-radius:10px;
 }
 
 / GALLERY /
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-max-width:1200px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px;
+max-width:1100px;
 margin:auto;
 }
-
 .grid img{
 width:100%;
-height:250px;
+height:220px;
 object-fit:cover;
-border-radius:12px;
+border-radius:10px;
 }
 
 / CONTACT /
 .contact{
 background:#121821;
-padding:80px 20px;
-text-align:center;
+padding:60px 20px;
 }
 
 / STICKY */
@@ -168,9 +136,8 @@ padding:10px;
 
 <body>
 
-<!-- NAV -->
 <nav>
-<h2><span style="color:#ffb300;">J</span>unior's Services</h2>
+<h2>Junior's Services</h2>
 </nav>
 
 <!-- HERO -->
@@ -244,13 +211,13 @@ padding:10px;
 
 <script>
 let slides = document.querySelectorAll('.slide');
-let index = 0;
+let i = 0;
 
 setInterval(()=>{
-slides[index].classList.remove('active');
-index = (index + 1) % slides.length;
-slides[index].classList.add('active');
-},3000);
+slides[i].classList.remove('active');
+i = (i + 1) % slides.length;
+slides[i].classList.add('active');
+},2500);
 </script>
 
 </body>
