@@ -3,21 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior's Handyman Services</title>
 
-<title>Junior's Handyman Services | Nashville TN</title>
-
-<!-- GOOGLE FONT (LUXURY LOOK) -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 {box-sizing:border-box;}
-
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
 background:#0b0f14;
 color:white;
-overflow-x:hidden;
 }
 
 / NAV /
@@ -28,90 +24,94 @@ width:100%;
 display:flex;
 justify-content:space-between;
 padding:18px 40px;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(15px);
-border-bottom:1px solid rgba(255,255,255,0.08);
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
 z-index:999;
 }
 
 nav h2{
 color:#ffb300;
-font-weight:700;
-letter-spacing:1px;
 }
 
 / HERO /
 .hero{
 height:100vh;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:20px;
+overflow:hidden;
+}
 
-background:
-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url('IMG_0613.jpeg');
+/ SLIDESHOW /
+.slideshow{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:0;
+}
 
-background-size:cover;
-background-position:center;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+top:0;
+left:0;
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
-font-size:60px;
-font-weight:900;
-line-height:1.1;
-max-width:800px;
-margin:auto;
+font-size:50px;
 }
 
 .hero span{
 color:#ffb300;
 }
 
-.hero p{
-margin-top:15px;
-opacity:.7;
-}
-
-/ BUTTON /
 .btn{
-padding:16px 30px;
-border-radius:14px;
-font-weight:600;
+padding:14px 28px;
+border-radius:10px;
 text-decoration:none;
+margin:10px;
 display:inline-block;
-margin:12px;
-transition:.3s;
 }
 
 .btn-main{
-background:linear-gradient(135deg,#ffb300,#ff8800);
+background:#ffb300;
 color:black;
-box-shadow:0 15px 40px rgba(255,170,0,0.4);
 }
 
 .btn-outline{
-border:1px solid rgba(255,255,255,0.3);
+border:1px solid white;
 color:white;
-}
-
-.btn:hover{
-transform:translateY(-4px) scale(1.05);
-}
-
-/ TRUST /
-.trust{
-margin-top:25px;
-opacity:.6;
-font-size:14px;
 }
 
 / SECTION /
 .section{
-padding:110px 20px;
-max-width:1200px;
-margin:auto;
+padding:100px 20px;
 text-align:center;
 }
 
@@ -119,55 +119,38 @@ text-align:center;
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:60px;
+gap:20px;
+max-width:1100px;
+margin:auto;
 }
 
 .card{
-background:linear-gradient(145deg,#121821,#0f141b);
-padding:35px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.05);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(0,0,0,0.7);
+background:#121821;
+padding:30px;
+border-radius:12px;
 }
 
 / GALLERY /
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-margin-top:50px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+max-width:1200px;
+margin:auto;
 }
 
 .grid img{
 width:100%;
-height:280px;
+height:250px;
 object-fit:cover;
-border-radius:16px;
-transition:.4s;
-filter:brightness(.9);
-}
-
-.grid img:hover{
-transform:scale(1.08);
-filter:brightness(1.1);
+border-radius:12px;
 }
 
 / CONTACT /
 .contact{
-background:linear-gradient(180deg,#0f141b,#0b0f14);
-padding:120px 20px;
+background:#121821;
+padding:80px 20px;
 text-align:center;
-}
-
-.contact h1{
-font-size:40px;
-margin-top:10px;
 }
 
 / STICKY */
@@ -177,15 +160,8 @@ bottom:0;
 width:100%;
 display:flex;
 justify-content:space-around;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-padding:12px;
-}
-
-.sticky a{
-flex:1;
-margin:0 10px;
-text-align:center;
+background:#111;
+padding:10px;
 }
 </style>
 </head>
@@ -194,22 +170,27 @@ text-align:center;
 
 <!-- NAV -->
 <nav>
-<h2>Junior's Services</h2>
+<h2><span style="color:#ffb300;">J</span>unior's Services</h2>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<div>
+
+<div class="slideshow">
+<img src="IMG_0613.jpeg" class="slide active">
+<img src="IMG_0621.jpeg" class="slide">
+<img src="IMG_0624.jpeg" class="slide">
+<img src="IMG_0558.jpeg" class="slide">
+</div>
+
+<div class="hero-content">
 <h1><span>Premium</span> Tree Work & Construction</h1>
 <p>Nashville & Surrounding Areas</p>
 
 <a href="tel:6159987338" class="btn btn-main">Call Now</a>
 <a href="sms:6159987338" class="btn btn-outline">Text Us</a>
+</div>
 
-<div class="trust">
-✔ Free Estimates • ✔ Fast Service • ✔ Reliable Work
-</div>
-</div>
 </section>
 
 <!-- SERVICES -->
@@ -260,6 +241,17 @@ text-align:center;
 <a href="tel:6159987338" class="btn btn-main">Call</a>
 <a href="sms:6159987338" class="btn btn-outline">Text</a>
 </div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(()=>{
+slides[index].classList.remove('active');
+index = (index + 1) % slides.length;
+slides[index].classList.add('active');
+},3000);
+</script>
 
 </body>
 </html>
