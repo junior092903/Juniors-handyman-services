@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior's Outdoor & Construction Services</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f7fa;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('1.jpg');
+  background-size: cover;
+  background-position:center;
+  color: white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.btn {
+  padding: 14px 22px;
+  background: #ffb300;
+  color: black;
+  text-decoration:none;
+  border-radius:8px;
+  margin:10px;
+  display:inline-block;
+  font-weight:bold;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  padding:40px;
+}
+
+.grid img {
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section {
+  text-align:center;
+  padding:50px 20px;
+}
+
+/* ZOOM */
+#zoomBox {
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#zoomBox img {
+  max-width:90%;
+}
+
+/* STICKY */
+.sticky {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  background:#0f1c2e;
+  padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Tree Work • Land Clearing • Construction</h1>
+    <p>Nashville & Surrounding Areas</p>
+
+    <a href="tel:6159987338" class="btn">Call Now</a>
+    <a href="sms:6159987338" class="btn">Text Us</a>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section">
+<h2>Our Work</h2>
+
+<div class="grid">
+
+<img src="1.jpg" onclick="zoom(this)">
+<img src="2.jpg" onclick="zoom(this)">
+<img src="3.jpg" onclick="zoom(this)">
+<img src="4.jpg" onclick="zoom(this)">
+<img src="5.jpg" onclick="zoom(this)">
+<img src="6.jpg" onclick="zoom(this)">
+<img src="7.jpg" onclick="zoom(this)">
+<img src="8.jpg" onclick="zoom(this)">
+<img src="9.jpg" onclick="zoom(this)">
+<img src="10.jpg" onclick="zoom(this)">
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+  <h2>Call or Text Anytime</h2>
+  <h1>(615) 998-7338</h1>
+</section>
+
+<!-- ZOOM -->
+<div id="zoomBox" onclick="closeZoom()">
+  <img id="zoomImg">
+</div>
+
+<!-- STICKY -->
+<div class="sticky">
+  <a href="tel:6159987338" class="btn">Call</a>
+  <a href="sms:6159987338" class="btn">Text</a>
+</div>
+
+<script>
+function zoom(img){
+ document.getElementById('zoomBox').style.display='flex';
+ document.getElementById('zoomImg').src=img.src;
+}
+function closeZoom(){
+ document.getElementById('zoomBox').style.display='none';
+}
+</script>
+
+</body>
+</html>
