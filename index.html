@@ -3,165 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junior's Services</title>
+<title>Junior's Landscaping & Handyman Services</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 {box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Poppins',sans-serif;background:#0b0f14;color:#fff;}
+body{font-family:'Poppins',sans-serif;background:#0b0f14;color:#fff;overflow-x:hidden;}
 
 / NAV /
 nav{
 position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;
-padding:15px 25px;
-background:rgba(0,0,0,.7);
-z-index:10;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 30px;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(12px);
+z-index:999;
 }
-nav h2{color:#ffb300;}
+nav img{
+height:50px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.6);
+}
+nav a{
+color:white;text-decoration:none;margin-left:15px;font-size:14px;
+}
 
 / HERO /
 .hero{
 position:relative;
 height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 overflow:hidden;
 }
 
-/ SLIDESHOW /
-.slideshow{
-position:absolute;
-top:0;left:0;width:100%;height:100%;
-}
+/ SLIDES /
 .slide{
 position:absolute;
-width:100%;height:100%;
-object-fit:cover;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
 opacity:0;
-transition:opacity 1s ease;
+transition:opacity 1.2s ease-in-out;
 }
 .slide.active{opacity:1;}
 
-/ DARK OVERLAY /
-.hero::after{
-content:"";
+.overlay{
 position:absolute;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,.5);
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-/ CONTENT /
-.hero-content{
-position:relative;
-z-index:2;
-max-width:700px;
-}
-
-.hero h1{
+.overlay h1{
 font-size:48px;
 font-weight:900;
+max-width:800px;
 }
+.overlay span{color:#ffb300;}
+.overlay p{opacity:.8;margin-top:10px;}
 
-.hero span{color:#ffb300;}
-
+/ BUTTON /
 .btn{
-display:inline-block;
-margin:12px;
 padding:14px 26px;
+background:#ffb300;
+color:black;
 border-radius:10px;
 text-decoration:none;
-font-weight:700;
+margin:12px;
+font-weight:bold;
+transition:.3s;
 }
-
-.btn-main{background:#ffb300;color:#000;}
-.btn-outline{border:1px solid #fff;color:#fff;}
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(255,179,0,0.4);
+}
 
 / SECTION /
 .section{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
+max-width:1200px;
+margin:auto;
 }
 
 / SERVICES /
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-max-width:1000px;
-margin:auto;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
 }
 .card{
 background:#121821;
-padding:25px;
-border-radius:10px;
+padding:30px;
+border-radius:15px;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-8px);
 }
 
 / GALLERY /
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:12px;
-max-width:1100px;
-margin:auto;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:40px;
 }
 .grid img{
 width:100%;
-height:220px;
+height:250px;
 object-fit:cover;
-border-radius:10px;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
 }
+.grid img:hover{transform:scale(1.05);}
 
 / CONTACT /
 .contact{
 background:#121821;
-padding:60px 20px;
+padding:100px 20px;
+text-align:center;
 }
 
-/ STICKY */
+/ ZOOM /
+#zoomBox{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+#zoomBox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+/ STICKY /
 .sticky{
 position:fixed;
 bottom:0;
 width:100%;
 display:flex;
 justify-content:space-around;
-background:#111;
-padding:10px;
+background:#0f141b;
+padding:12px;
+}
+
+/ SCROLL ANIMATION /
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-<h2>Junior's Services</h2>
+<img src="CE76556F-8246-4B0E-BBD8-317366D74460.png">
+<div>
+<a href="#services">Services</a>
+<a href="#work">Work</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 
-<div class="slideshow">
-<img src="IMG_0613.jpeg" class="slide active">
-<img src="IMG_0621.jpeg" class="slide">
-<img src="IMG_0624.jpeg" class="slide">
-<img src="IMG_0558.jpeg" class="slide">
-</div>
+<div class="slide active" style="background-image:url('IMG_0613.jpeg')"></div>
+<div class="slide" style="background-image:url('IMG_0621.jpeg')"></div>
+<div class="slide" style="background-image:url('IMG_0624.jpeg')"></div>
+<div class="slide" style="background-image:url('IMG_0558.jpeg')"></div>
 
-<div class="hero-content">
-<h1><span>Premium</span> Tree Work & Construction</h1>
+<div class="overlay">
+<h1><span>Premium</span> Landscaping & Handyman Services</h1>
 <p>Nashville & Surrounding Areas</p>
 
-<a href="tel:6159987338" class="btn btn-main">Call Now</a>
-<a href="sms:6159987338" class="btn btn-outline">Text Us</a>
+<a href="tel:6159987338" class="btn">Call Now</a>
+<a href="sms:6159987338" class="btn">Text Us</a>
+
+<p style="margin-top:10px;">✔ Free Estimates • ✔ Fast • ✔ Reliable</p>
 </div>
 
 </section>
 
 <!-- SERVICES -->
-<section class="section">
+<section class="section fade" id="services">
 <h2>Our Services</h2>
 
 <div class="services">
@@ -175,49 +222,75 @@ padding:10px;
 </section>
 
 <!-- WORK -->
-<section class="section">
+<section class="section fade" id="work">
 <h2>Our Work</h2>
 
 <div class="grid">
-<img src="IMG_0199.jpeg">
-<img src="IMG_0486.jpeg">
-<img src="IMG_0521.jpeg">
-<img src="IMG_0522.jpeg">
-<img src="IMG_0558.jpeg">
-<img src="IMG_0612.jpeg">
-<img src="IMG_0613.jpeg">
-<img src="IMG_0621.jpeg">
-<img src="IMG_0624.jpeg">
-<img src="IMG_5710.jpeg">
-<img src="IMG_5711.jpeg">
-<img src="IMG_5712.jpeg">
-<img src="IMG_5715.jpeg">
-<img src="IMG_5720.jpeg">
+<img src="IMG_0199.jpeg" onclick="zoom(this)">
+<img src="IMG_0486.jpeg" onclick="zoom(this)">
+<img src="IMG_0521.jpeg" onclick="zoom(this)">
+<img src="IMG_0522.jpeg" onclick="zoom(this)">
+<img src="IMG_0558.jpeg" onclick="zoom(this)">
+<img src="IMG_0612.jpeg" onclick="zoom(this)">
+<img src="IMG_0613.jpeg" onclick="zoom(this)">
+<img src="IMG_0621.jpeg" onclick="zoom(this)">
+<img src="IMG_0624.jpeg" onclick="zoom(this)">
+<img src="IMG_5710.jpeg" onclick="zoom(this)">
+<img src="IMG_5711.jpeg" onclick="zoom(this)">
+<img src="IMG_5712.jpeg" onclick="zoom(this)">
+<img src="IMG_5715.jpeg" onclick="zoom(this)">
+<img src="IMG_5720.jpeg" onclick="zoom(this)">
 </div>
+
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section class="contact fade" id="contact">
 <h2>Call or Text Anytime</h2>
 <h1>(615) 998-7338</h1>
 <p>Nashville • Antioch • Brentwood • Franklin</p>
 </section>
 
+<!-- ZOOM -->
+<div id="zoomBox" onclick="closeZoom()">
+<img id="zoomImg">
+</div>
+
 <!-- STICKY -->
 <div class="sticky">
-<a href="tel:6159987338" class="btn btn-main">Call</a>
-<a href="sms:6159987338" class="btn btn-outline">Text</a>
+<a href="tel:6159987338" class="btn">Call</a>
+<a href="sms:6159987338" class="btn">Text</a>
 </div>
 
 <script>
-let slides = document.querySelectorAll('.slide');
-let i = 0;
-
+/ SLIDESHOW /
+let slides=document.querySelectorAll('.slide');
+let i=0;
 setInterval(()=>{
 slides[i].classList.remove('active');
-i = (i + 1) % slides.length;
+i=(i+1)%slides.length;
 slides[i].classList.add('active');
-},2500);
+},3000);
+
+/ ZOOM /
+function zoom(img){
+document.getElementById('zoomBox').style.display='flex';
+document.getElementById('zoomImg').src=img.src;
+}
+function closeZoom(){
+document.getElementById('zoomBox').style.display='none';
+}
+
+/ SCROLL ANIMATION */
+let faders=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+faders.forEach(el=>{
+let rect=el.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
 </script>
 
 </body>
