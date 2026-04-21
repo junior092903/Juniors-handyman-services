@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Junior's Handyman Services | Nashville TN</title>
+
+<style>
+{box-sizing:border-box;}
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#0a0d12;
+color:white;
+}
+
+/ NAV /
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:15px 25px;
+background:rgba(0,0,0,0.7);
+z-index:999;
+}
+nav h2{color:#ffb300;}
+
+/ HERO /
+.hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('IMG_0613.jpeg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+opacity:.8;
+}
+
+/ BUTTON /
+.btn{
+padding:14px 24px;
+background:#ffb300;
+color:black;
+border-radius:8px;
+text-decoration:none;
+display:inline-block;
+margin:10px;
+font-weight:bold;
+}
+
+/ SECTION /
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+/ SERVICES /
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+max-width:1100px;
+margin:auto;
+}
+.card{
+background:#111;
+padding:20px;
+border-radius:10px;
+}
+
+/ GALLERY /
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:15px;
+max-width:1200px;
+margin:auto;
+}
+.grid img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:10px;
+transition:.3s;
+}
+.grid img:hover{
+transform:scale(1.05);
+}
+
+/ CONTACT /
+.contact{
+background:#111;
+padding:60px 20px;
+}
+
+/ STICKY */
+.sticky{
+position:fixed;
+bottom:0;
+width:100%;
+display:flex;
+justify-content:space-around;
+background:#111;
+padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Junior's Services</h2>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<h1>Tree Work • Land Clearing • Construction</h1>
+<p>Nashville & Surrounding Areas</p>
+
+<a href="tel:6159987338" class="btn">Call Now</a>
+<a href="sms:6159987338" class="btn">Text Us</a>
+
+<p style="margin-top:10px;opacity:.7;">Free Estimates • Fast Service • Reliable Work</p>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">Tree Removal</div>
+<div class="card">Yard Cleanup</div>
+<div class="card">Mulching</div>
+<div class="card">Land Clearing</div>
+<div class="card">Construction</div>
+<div class="card">Furniture Moving</div>
+</div>
+</section>
+
+<!-- WORK -->
+<section class="section">
+<h2>Our Work</h2>
+
+<div class="grid">
+<img src="IMG_0199.jpeg">
+<img src="IMG_0486.jpeg">
+<img src="IMG_0521.jpeg">
+<img src="IMG_0522.jpeg">
+<img src="IMG_0558.jpeg">
+<img src="IMG_0612.jpeg">
+<img src="IMG_0613.jpeg">
+<img src="IMG_0621.jpeg">
+<img src="IMG_0624.jpeg">
+<img src="IMG_5710.jpeg">
+<img src="IMG_5711.jpeg">
+<img src="IMG_5712.jpeg">
+<img src="IMG_5715.jpeg">
+<img src="IMG_5720.jpeg">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+<h2>Call or Text Anytime</h2>
+<h1>(615) 998-7338</h1>
+<p>Nashville • Antioch • Brentwood • Franklin</p>
+</section>
+
+<!-- STICKY -->
+<div class="sticky">
+<a href="tel:6159987338" class="btn">Call</a>
+<a href="sms:6159987338" class="btn">Text</a>
+</div>
+
+</body>
+</html>
