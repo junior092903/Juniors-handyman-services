@@ -3,66 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Junior's Landscaping & Handyman Services</title>
-
+<title>Junior's Landscaping & Handyman</title>
 <style>
-*{box-sizing:border-box;}
-body{
-margin:0;
-font-family:Arial;
-background:#0a0d12;
-color:white;
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial;background:#0b0f14;color:white;}
+
+/* INTRO */
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:fadeOut 2s forwards;
+animation-delay:2s;
+}
+#intro img{height:80px;}
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
 }
 
 /* NAV */
 nav{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 display:flex;
-align-items:center;
-justify-content:space-between;
-padding:10px 18px;
-background:rgba(0,0,0,0.75);
-backdrop-filter:blur(12px);
+justify-content:center;
+background:#000;
+padding:10px;
 z-index:999;
 }
+nav img{height:35px;}
 
-/* LOGO */
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo img{
-height:45px;
-width:auto;
-border-radius:6px;
-}
-
-/* MOBILE FIX */
-@media (max-width:600px){
-.logo img{
-height:32px;
-}
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:15px;
-font-size:14px;
-}
-
-/* HERO SLIDER */
+/* HERO */
 .hero{
 margin-top:60px;
-height:75vh;
+height:70vh;
 position:relative;
-overflow:hidden;
 }
-
 .slide{
 position:absolute;
 width:100%;
@@ -72,69 +54,72 @@ background-position:center;
 opacity:0;
 transition:1s;
 }
+.slide.active{opacity:1;}
 
-.slide.active{
-opacity:1;
-}
-
-/* HERO TEXT */
-.hero-content{
+.overlay{
 position:absolute;
-bottom:40px;
-left:20px;
-z-index:2;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
-.hero h1{
-font-size:32px;
-}
-
+/* BUTTON */
 .btn{
 padding:12px 20px;
 background:#ffb300;
 color:black;
 border-radius:8px;
 text-decoration:none;
-display:inline-block;
-margin-top:10px;
-font-weight:bold;
+margin:10px;
 }
 
 /* SECTION */
 .section{
 padding:60px 20px;
+text-align:center;
 }
 
-/* SERVICES */
-.services{
-display:grid;
-gap:15px;
-}
-.card{
-background:#111;
-padding:20px;
-border-radius:10px;
-}
-
-/* GALLERY */
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:10px;
 }
 .grid img{
 width:100%;
-height:140px;
+height:150px;
 object-fit:cover;
-border-radius:10px;
 }
 
-/* CONTACT */
-iframe{
+/* BEFORE AFTER */
+.compare{
+position:relative;
+max-width:300px;
+margin:auto;
+}
+.compare img{
 width:100%;
-height:250px;
+}
+.slider{
+position:absolute;
+top:0;
+left:50%;
+width:3px;
+height:100%;
+background:#ffb300;
+}
+
+/* FORM */
+input,select{
+width:100%;
+padding:10px;
+margin:5px 0;
 border:none;
-border-radius:10px;
+border-radius:6px;
 }
 
 /* STICKY */
@@ -149,55 +134,54 @@ padding:10px;
 }
 </style>
 </head>
-
 <body>
-
-<!-- NAV -->
-<nav>
-<div class="logo">
+<!-- INTRO -->
+<div id="intro">
 <img src="CE76556F-8246-4B0E-BBD8-317366D74460.png">
 </div>
-
-<div>
-<a href="#services">Services</a>
-<a href="#work">Work</a>
-<a href="#contact">Contact</a>
-</div>
+<!-- NAV -->
+<nav>
+<img src="CE76556F-8246-4B0E-BBD8-317366D74460.png">
 </nav>
-
-<!-- HERO SLIDES -->
+<!-- HERO -->
 <section class="hero">
 <div class="slide active" style="background-image:url('IMG_0613.jpeg')"></div>
-<div class="slide" style="background-image:url('IMG_0612.jpeg')"></div>
 <div class="slide" style="background-image:url('IMG_0621.jpeg')"></div>
-
-<div class="hero-content">
-<h1>Premium Landscaping & Handyman</h1>
-<p>Nashville & Surrounding Areas</p>
-
-<a href="tel:6159987338" class="btn">Call Now</a>
-<a href="sms:6159987338" class="btn">Text Us</a>
+<div class="overlay">
+<h2>Premium Landscaping</h2>
+<a href="tel:6159987338" class="btn">Call</a>
+<a href="sms:6159987338" class="btn">Text</a>
 </div>
 </section>
-
-<!-- SERVICES -->
-<section class="section" id="services">
-<h2>Our Services</h2>
-
-<div class="services">
-<div class="card">Tree Removal</div>
-<div class="card">Land Clearing</div>
-<div class="card">Mulching</div>
-<div class="card">Construction</div>
-<div class="card">Yard Cleanup</div>
-<div class="card">Furniture Moving</div>
+<!-- BEFORE AFTER -->
+<section class="section">
+<h2>Before / After</h2>
+<div class="compare">
+<img src="IMG_0612.jpeg">
+<img src="IMG_0621.jpeg" style="position:absolute;top:0;left:0;width:50%;">
+<div class="slider"></div>
 </div>
 </section>
-
+<!-- QUOTE -->
+<section class="section">
+<h2>Quick Estimate</h2>
+<select id="service">
+<option value="100">Small Job ($100)</option>
+<option value="300">Medium Job ($300)</option>
+<option value="600">Large Job ($600)</option>
+</select>
+<h3 id="price"></h3>
+</section>
+<!-- BOOK -->
+<section class="section">
+<h2>Book a Job</h2>
+<input type="text" id="name" placeholder="Name">
+<input type="text" id="job" placeholder="Job details">
+<button class="btn" onclick="send()">Send Request</button>
+</section>
 <!-- WORK -->
-<section class="section" id="work">
+<section class="section">
 <h2>Our Work</h2>
-
 <div class="grid">
 <img src="IMG_0199.jpeg">
 <img src="IMG_0486.jpeg">
@@ -212,34 +196,36 @@ padding:10px;
 <img src="IMG_5720.jpeg">
 </div>
 </section>
-
 <!-- CONTACT -->
-<section class="section" id="contact">
-<h2>Service Area</h2>
-<p>Nashville • Antioch • Brentwood • Franklin</p>
-
-<iframe src="https://maps.google.com/maps?q=Nashville%20TN&t=&z=10&ie=UTF8&iwloc=&output=embed"></iframe>
-
-<h2>(615) 998-7338</h2>
+<section class="section">
+<h2>Call Now</h2>
+<h1>(615) 998-7338</h1>
 </section>
-
 <!-- STICKY -->
 <div class="sticky">
 <a href="tel:6159987338" class="btn">Call</a>
 <a href="sms:6159987338" class="btn">Text</a>
 </div>
-
-<!-- SLIDER SCRIPT -->
 <script>
-let slides=document.querySelectorAll(".slide");
+let slides=document.querySelectorAll('.slide');
 let i=0;
-
 setInterval(()=>{
-slides[i].classList.remove("active");
+slides[i].classList.remove('active');
 i=(i+1)%slides.length;
-slides[i].classList.add("active");
+slides[i].classList.add('active');
 },3000);
-</script>
 
+function calc(){
+let val=document.getElementById('service').value;
+document.getElementById('price').innerText="Estimated: $"+val;
+}
+
+function send(){
+let name=document.getElementById("name").value;
+let job=document.getElementById("job").value;
+window.location.href=`sms:6159987338?body=New job from ${name}: ${job}`;
+}
+</script>
 </body>
 </html>
+:::
